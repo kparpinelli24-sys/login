@@ -1,32 +1,42 @@
 require('dotenv').config();
 
 const express = require('express');
-const app = express();
 const path = require('path');
 
-const PORT = process.env.PORT || 3000;
+const app = express();
 
-app.use(express.static('./public'));
 app.use(express.json());
+app.use(express.static('./public'));
 
 const authRoutes = require('./src/routes/authRoutes');
+const questoesRoutes = require('./src/routes/questoesRoutes');
+
 const { verificarToken } = require('./src/middleware/authMiddleware');
 
-const produtosRoutes = require('./src/routes/produtosRoutes');
-app.use('/produtos', verificarToken, produtosRoutes);
 app.use('/auth', authRoutes);
 
-app.get('/cadastro', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'cadastro.html'));
-});
+app.use(
+    '/questoes',
+    verificarToken,
+    questoesRoutes
+);
+
+const questoesRoutes =
+require('./src/routes/questoesRoutes');
+
+app.use(
+    '/questoes',
+    verificarToken,
+    questoesRoutes
+);
+
 app.get('/', (req, res) => {
-  res.json({ 
-    mensagem: 'API de Produtos com PostgreSQL',
-    versao: '3.0',
-    ambiente: process.env.NODE_ENV || 'development',
-    banco: 'PostgreSQL'
-  });
+    res.sendFile(
+        path.join(__dirname, 'public', 'index.html')
+    );
 });
+
+const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
   console.log('='.repeat(50));
