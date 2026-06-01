@@ -1,0 +1,142 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial,sans-serif;
+    background:#f5f2ff;
+}
+
+header{
+    background:#8b5cf6;
+    color:white;
+    padding:20px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+header h1{
+    font-size:28px;
+}
+
+#logoutButton{
+    background:white;
+    color:#8b5cf6;
+
+    border:none;
+
+    padding:10px 18px;
+
+    border-radius:10px;
+
+    cursor:pointer;
+}
+
+main{
+    max-width:1200px;
+
+    margin:30px auto;
+
+    padding:20px;
+}
+
+.form-section,
+.lista-section{
+
+    background:white;
+
+    padding:25px;
+
+    border-radius:20px;
+
+    margin-bottom:30px;
+
+    box-shadow:0 5px 20px rgba(0,0,0,.1);
+}
+
+.form-section h2,
+.lista-section h2{
+    margin-bottom:20px;
+}
+
+form{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+
+input,
+textarea{
+
+    padding:12px;
+
+    border:1px solid #ddd;
+
+    border-radius:10px;
+}
+
+textarea{
+    min-height:120px;
+}
+
+button[type="submit"]{
+
+    background:#8b5cf6;
+
+    color:white;
+
+    border:none;
+
+    padding:12px;
+
+    border-radius:10px;
+
+    cursor:pointer;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+th,
+td{
+    padding:12px;
+    border-bottom:1px solid #eee;
+}
+
+.editar{
+
+    background:#8b5cf6;
+
+    color:white;
+
+    border:none;
+
+    padding:8px 12px;
+
+    border-radius:8px;
+
+    cursor:pointer;
+}
+
+.excluir{
+
+    background:#ef4444;
+
+    color:white;
+
+    border:none;
+
+    padding:8px 12px;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+    margin-left:5px;
+}

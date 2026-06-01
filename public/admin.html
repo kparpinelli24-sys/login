@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel do Professor</title>
+
+    <link rel="stylesheet" href="./css/admin.css">
+</head>
+<body>
+
+    <header>
+
+        <h1>Painel do Professor</h1>
+
+        <button id="logoutButton">
+            Sair
+        </button>
+
+    </header>
+
+    <main>
+
+        <section class="form-section">
+
+            <h2>Cadastrar Questão</h2>
+
+            <form id="questaoForm">
+
+                <input
+                    type="hidden"
+                    id="idQuestao"
+                >
+
+                <label>Pergunta</label>
+
+                <textarea
+                    id="pergunta"
+                    required
+                ></textarea>
+
+                <label>Tema</label>
+
+                <input
+                    type="text"
+                    id="tema"
+                    required
+                >
+
+                <label>Link da Imagem</label>
+
+                <input
+                    type="text"
+                    id="link"
+                >
+
+                <label>Categoria</label>
+
+                <input
+                    type="number"
+                    id="id_categoria"
+                    required
+                >
+
+                <label>Vestibular</label>
+
+                <input
+                    type="number"
+                    id="id_vestibular"
+                    required
+                >
+
+                <button type="submit">
+                    Salvar Questão
+                </button>
+
+            </form>
+
+        </section>
+
+        <section class="lista-section">
+
+            <h2>Questões Cadastradas</h2>
+
+            <table>
+
+                <thead>
+
+                    <tr>
+                        <th>ID</th>
+                        <th>Pergunta</th>
+                        <th>Tema</th>
+                        <th>Ações</th>
+                    </tr>
+
+                </thead>
+
+                <tbody id="tabelaQuestoes">
+
+                </tbody>
+
+            </table>
+
+        </section>
+
+    </main>
+
+    <script src="./js/admin.js"></script>
+
+</body>
+</html>
